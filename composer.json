@@ -1,0 +1,15 @@
+{
+    "name": "marinelevrague/p5-mvc",
+    "autoload": {
+        "psr-4": {
+            "Marinelevrague\\P5Mvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MarineLvrge",
+            "email": "levraguemarine@gmail.com"
+        }
+    ],
+    "require": {}
+}
