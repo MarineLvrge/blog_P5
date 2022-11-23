@@ -2,13 +2,14 @@
 
 require_once('src/controllers/comment/add.php');
 require_once('src/controllers/comment/update.php');
-require_once('src/controllers/homepage.php');
-require_once('src/controllers/post.php');
 
-use Application\Controllers\Comment\Add\AddComment;
-use Application\Controllers\Comment\Update\UpdateComment;
-use Application\Controllers\Homepage\Homepage;
-use Application\Controllers\Post\Post;
+use App\Controllers\Comment\AddComment;
+use App\Controllers\Comment\UpdateComment;
+use App\Controllers\HomepageController;
+use App\Controllers\PostController;
+
+$loader = require __DIR__ . '/vendor/autoload.php';
+$loader->addPsr4('App\\', __DIR__);
 
 try {
     if (isset($_GET['action']) && $_GET['action'] !== '') {
@@ -16,7 +17,7 @@ try {
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $identifier = $_GET['id'];
 
-                (new Post())->execute($identifier);
+                (new PostController())->execute($identifier);
             } else {
                 throw new Exception('Aucun identifiant de billet envoyé');
             }
@@ -45,7 +46,7 @@ try {
             throw new Exception("La page que vous recherchez n'existe pas.");
         }
     } else {
-        (new Homepage())->execute();
+        (new HomepageController())->execute();
     }
 } catch (Exception $e) {
     $errorMessage = $e->getMessage();

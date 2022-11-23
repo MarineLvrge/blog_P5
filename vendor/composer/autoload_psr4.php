@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Marinelevrague\\P5Mvc\\' => array($baseDir . '/src'),
+    'App\\' => array($baseDir . '/src'),
 );

@@ -2,7 +2,7 @@
     "name": "marinelevrague/p5-mvc",
     "autoload": {
         "psr-4": {
-            "Marinelevrague\\P5Mvc\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [
