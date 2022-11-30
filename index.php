@@ -1,8 +1,6 @@
 <?php
 
-require_once('src/controllers/comment/add.php');
-require_once('src/controllers/comment/update.php');
-
+use App\Controllers\Admin\PostControllerAdmin;
 use App\Controllers\Comment\AddComment;
 use App\Controllers\Comment\UpdateComment;
 use App\Controllers\HomepageController;
@@ -45,6 +43,11 @@ try {
         } else {
             throw new Exception("La page que vous recherchez n'existe pas.");
         }
+    } else if (isset($_GET['admin'])) {
+        $PostControllerAdmin = new PostControllerAdmin();
+        if (isset($_GET['post']) && $_GET['post'] === 'add') {
+            $PostControllerAdmin->addPost();
+        };
     } else {
         (new HomepageController())->execute();
     }

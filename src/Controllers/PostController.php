@@ -23,3 +23,4 @@ class PostController
         require('templates/post.php');
     }
 }
+
