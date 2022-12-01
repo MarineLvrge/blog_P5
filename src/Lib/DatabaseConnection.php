@@ -15,4 +15,3 @@ class DatabaseConnection
         return $this->database;
     }
 }
-'test';
